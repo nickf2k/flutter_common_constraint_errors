@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'errors_page/overflow_page.dart';
 import 'errors_page/renderbox_not_laid_out_page.dart';
+import 'errors_page/vertical_viewport_unbounded_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,7 +66,13 @@ class HomePage extends StatelessWidget {
               height: 8,
             ),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const VerticalViewportUnboundedPage(),
+                  ),
+                );
+              },
               child:
                   const Text('Vertical viewport was given unbounded height...'),
             ),
