@@ -14,11 +14,13 @@ class OverflowPage extends StatelessWidget {
         child: Row(
           children: [
             const Icon(Icons.error),
+            // Need wrap below Column with Expanded
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('Title',
                     style: Theme.of(context).textTheme.headlineMedium),
+                // Wrap below Text with Expanded
                 const Text(
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed '
                   'do eiusmod tempor incididunt ut labore et dolore magna '
