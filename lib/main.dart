@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'errors_page/overflow_page.dart';
+import 'errors_page/renderbox_not_laid_out_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,19 +31,34 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flutter Common Constraint Errors')),
+      appBar: AppBar(
+        title: const Text('Flutter Common Constraint Errors'),
+        automaticallyImplyLeading: true,
+      ),
       body: Center(
         child: Column(
           children: [
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  CupertinoPageRoute(
+                    builder: (context) => const RenderBoxNotLaidOutPage(),
+                  ),
+                );
+              },
               child: const Text('RenderBox was not laid out'),
             ),
             const SizedBox(
               height: 8,
             ),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const OverflowPage(),
+                  ),
+                );
+              },
               child: const Text('overflow...'),
             ),
             const SizedBox(
