@@ -11,7 +11,26 @@ class RenderBoxNotLaidOutPage extends StatelessWidget {
         automaticallyImplyLeading: true,
       ),
       body: Center(
-        child: Column(),
+        child: Column(
+          children: <Widget>[
+            const Text('Header'),
+            // Wrap below ListView with Expanded
+            ListView(
+              children: const <Widget>[
+                ListTile(
+                  leading: Icon(Icons.accessibility),
+                  title: Text('Accessibility'),
+                ),
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
