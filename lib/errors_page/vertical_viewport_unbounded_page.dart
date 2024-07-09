@@ -18,8 +18,14 @@ class VerticalViewportUnboundedPage extends StatelessWidget {
             ListView(
               children: const <Widget>[
                 ListTile(
-                  leading: Icon(Icons.map),
-                  title: Text('Map'),
+                  leading: Icon(Icons.near_me),
+                  title: Text('Near Me'),
+                ),
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.restaurant),
+                    title: Text('Restaurant'),
+                  ),
                 ),
                 ListTile(
                   leading: Icon(Icons.subway),
